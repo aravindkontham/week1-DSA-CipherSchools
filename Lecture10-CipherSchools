@@ -1,0 +1,26 @@
+class A{
+    final int DOB=23;
+    final int digits;
+    final void fun(){
+        System.out.println("I'm a function of A");
+    }
+    A(){
+        digits=10;
+    }
+}
+final class B extends A{//final classes cannot be overwritten;
+//    void fun(){
+//        System.out.println("I'm function in B overriding function of A");
+//    }
+
+}
+//class C extends B{ cannot be extended
+//
+//}
+
+
+public class FinalStudy {
+    public static void main(String[] args) {
+
+    }
+}
