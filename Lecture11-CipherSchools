@@ -1,0 +1,34 @@
+abstract class Car{//we cannot instantiate the abstract class
+    int maxSpeed;
+    abstract void accelerate();//Only Declared but not implemented
+//    they are created to force the child classes to implement them before using.
+    abstract void breake();
+}
+abstract  class BMW extends Car{
+    void accelerate(){
+        System.out.println("BMW is accelerating");
+    }
+}
+class BMW2 extends BMW{
+    void breake(){
+        System.out.println("BMW is applying breaks");
+    }
+}
+abstract class Agent{ //an abstract class can exist without an abstract method
+    int x=10;
+    void fun(){
+        System.out.println("Hello, I'm an agent");
+    }
+}
+
+public class AbstractStudy {
+    public static void main(String[] args) {
+//        Car c=new Car()  cannot instantiate an abstract class
+//        BMW bmw=new BMW();
+//        bmw.accelerate();
+        BMW2 bmw=new BMW2();
+        bmw.accelerate();
+        bmw.breake();
+
+    }
+}
