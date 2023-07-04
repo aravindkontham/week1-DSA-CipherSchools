@@ -1,0 +1,63 @@
+//Interfaces
+interface M{
+    int x=10;
+    void fun();
+}
+interface N{
+    int x=20;
+    void fun();
+}
+class C implements M,N{
+    public void fun(){
+        System.out.println("Hello, I'm in class C");
+        System.out.println(M.x);//ambiguty is resolved using prefix
+        System.out.println(N.x);
+        System.out.println(M.super.hashCode());
+        System.out.println(N.super.hashCode());
+    }
+}
+interface O extends M,N{
+    void fun();
+}
+class D implements O{
+    public void fun(){
+        System.out.println("Hello, I,m in class D");
+    }
+}
+
+
+public class MultipleInheritance {
+    public static void main(String[] args) {
+        C c=new C();
+        c.fun();
+
+        D d=new D();
+        d.fun();
+
+    }
+}
+
+//Interface Study
+interface Shape{
+    double pi=3.14; //public, static and final
+//    pi=5; not able to change
+    double getSquare(double r);//public and abstract
+}
+class Circle implements Shape{
+    public double getSquare(double r){
+        return r*r;
+    }
+    void fun(){
+        System.out.println("Hey,I implemented an interface and Shape");
+    }
+}
+
+public class InterfaceStudy {
+    public static void main(String[] args) {
+        Circle c1=new Circle();
+        System.out.println(c1.getSquare(5));
+        c1.fun();
+
+    }
+}
+
